@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 typedef struct {
-    int* array;     // Array to store heap elements
-    int capacity;   // Maximum capacity of the heap
-    int size;       // Current size of the heap
+    int* array;    
+    int capacity;  
+    int size;       
 } Heap;
 
 Heap* createHeap(int capacity) {
@@ -40,7 +40,7 @@ void maxHeapify(Heap* heap, int i) {
 
 void insert(Heap* heap, int value) {
     if (heap->size == heap->capacity) {
-        printf("Heap is full. Cannot insert more elements.\n");
+        printf("Heap-ul este plin\n");
         return;
     }
 
@@ -55,7 +55,7 @@ void insert(Heap* heap, int value) {
 
 int deleteMax(Heap* heap) {
     if (heap->size == 0) {
-        printf("Heap is empty. Cannot extract maximum element.\n");
+        printf("Heap-ul este gol.\n");
         return -1;
     }
 
@@ -111,13 +111,11 @@ int main() {
     printf("Heap elements before deletion: ");
     printHeap(heap);
 
-    // Deleting the maximum element in the heap
     int max = deleteMax(heap);
     printf("Maximum element: %d\n", max);
     printf("Heap elements after deletion: ");
     printHeap(heap);
 
-    // Deleting element 27 from the heap
     deleteElement(heap, 27);
     printf("Heap elements after deleting 27 : ");
     printHeap(heap);
